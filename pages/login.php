@@ -5,14 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <?php require_once '../includes/css-bootstrap.php' ?>
-  <title>Регистрация</title>
+  <title>Авторизация</title>
 </head>
 <body>
   <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
     <div class="card">
       <div class="card-body">
         <h3 class="card-title mb-4">Авторизация</h3>
-        <form>
+        <form id="form-login">
           <div class="form-group">
             <label for="email">Email адрес</label>
             <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Введите email">

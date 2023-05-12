@@ -17,7 +17,6 @@
     foreach ($emails as $email) {
       if ($email['email'] == $current_email) {
         http_response_code(400);
-        echo "Пользователь с таким email уже существует";
         exit();
       }
     }
@@ -27,7 +26,7 @@
       $password = filter_var(trim($_POST['password']), FILTER_SANITIZE_STRING);
 
       $hash = password_hash($password, PASSWORD_DEFAULT);
-
+      
       $conn = $conn->prepare("INSERT INTO users (email, name, password) VALUES (:email, :name, :password)");
       $conn->bindParam(':email', $email);
       $conn->bindParam(':name', $name);
