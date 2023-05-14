@@ -20,7 +20,6 @@
       $name = filter_var(trim($_POST['name']), FILTER_SANITIZE_STRING);
       $password = filter_var(trim($_POST['password']), FILTER_SANITIZE_STRING);
 
-
       if (!$email || !$name || !$password) {
         http_response_code(400);
         exit();
