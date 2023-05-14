@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Описание страницы регистрации">
+  <meta name="keywords" content="регистрация, форма, веб-приложение">
   <?php require_once '../includes/css-bootstrap.php' ?>
   <title>Регистрация</title>
 </head>
@@ -42,7 +44,6 @@
       </div>
     </div>
   </div>
-
   <script type="module" src="../js/register.js"></script>
   <?php require_once '../includes/js-bootstrap.php' ?>  
 </body>

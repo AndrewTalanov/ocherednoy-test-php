@@ -1,4 +1,4 @@
-import { API } from './api.js';
+import { API } from '../../API.js';
 
 const loader = document.getElementById('loader');
 
@@ -38,15 +38,25 @@ form.addEventListener('submit', (e) => {
       passwordConfirm)
   {
     if (password == passwordConfirm ) {
+
       if (name.length >= 4) {
+
         openLoader();        
-        fetch(API.REGISTER, {
+
+        fetch(API.REGISTER_CONTROLLER, {
           method: 'POST',
           body: data
         }).then(result => {
+
           closeLoader();
+
           if (result.ok) {
             MESSAGE.BOX.innerHTML = MESSAGE.OK;
+
+            setTimeout(() => {
+              window.location.href = API.LOGIN_PAGE;
+            }, 1000);
+
           } else {
             MESSAGE.BOX.innerHTML = MESSAGE.INCORRECT_EMAIL;
           }

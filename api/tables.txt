@@ -1,0 +1,5 @@
+users
+    id int(11) AUTO_INCREMENT
+    email varchar(255) utf8mb4_unicode_ci
+    name varchar(255) utf8mb4_unicode_ci
+    password varchar(255) utf8mb4_unicode_ci

@@ -12,13 +12,12 @@ form.addEventListener('submit', (e) => {
   const email = data.get('email');
   const password = data.get('password');
   
-  
   fetch(API.LOGIN, {
     method: 'POST',
     body: data
   }).then(result => {
     if (result.ok) {
-
+      
     }
   });
 });
