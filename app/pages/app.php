@@ -1,0 +1,19 @@
+<?php
+session_start();
+print_r($_SESSION);
+echo session_status();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="../js/checkAuth.js"></script>
+  <title>ПРИЛОЖЕНИЕ</title>
+</head>
+<body>
+  
+</body>
+</html>

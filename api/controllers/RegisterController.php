@@ -35,7 +35,12 @@
         exit();
       }
 
-      $hash = password_hash($password, PASSWORD_ARGON2ID);
+      if(defined('PASSWORD_ARGON2ID')) {
+        $hash = password_hash($password, PASSWORD_ARGON2ID);
+      } else {
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+      }
+      
 
       $user = new User(null, $email, $name, $hash);
 

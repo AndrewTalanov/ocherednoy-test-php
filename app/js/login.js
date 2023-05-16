@@ -1,4 +1,4 @@
-import { API } from './api.js';
+import { API } from '../../API.js';
 
 const loader = document.getElementById('loader');
 
@@ -9,15 +9,16 @@ form.addEventListener('submit', (e) => {
 
   const data = new FormData(form);
 
-  const email = data.get('email');
-  const password = data.get('password');
+  // const email = data.get('email');
+  // const password = data.get('password');
   
-  fetch(API.LOGIN, {
+  fetch(API.LOGIN_CONTROLLER, {
     method: 'POST',
     body: data
-  }).then(result => {
-    if (result.ok) {
-      
-    }
+  })
+  .then(result => result.text())
+  .then(token => {
+    localStorage.setItem('token', token);
+    window.location.href = API.APP_PAGE;
   });
 });
