@@ -1,4 +1,5 @@
 import { API } from '../../API.js';
+import { logout } from './logout.js';
 
 const token = localStorage.getItem('token');
 
@@ -7,21 +8,19 @@ if (token) {
   const data = new FormData();
   data.append('token', token);
 
-  fetch(API.APP_PAGE_TEST, {
+  fetch(API.CHECK_TOKEN, {
     method: 'POST',
     body: data
   })
   .then(response => {
 
     if (response.ok) {
-      console.log('ok')
-      return response.text();
+      // return response.text();
     } else {
-      
+      logout();
     }
-  })
-  .then(response => {
-    console.log(response);
   });
+} else {
+  logout();
 }
 

@@ -16,7 +16,6 @@
           <div class="form-group">
             <label for="email">Email адрес</label>
             <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Введите email" name="email"> 
-            <p id="emailHelp" class="form-text text-muted">Мы никогда не передадим ваш email кому-либо ещё.</p>
           </div>
           <div class="form-group">
             <label for="password">Пароль</label>

@@ -8,7 +8,7 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const data = new FormData(form);
-
+  
   // const email = data.get('email');
   // const password = data.get('password');
   
