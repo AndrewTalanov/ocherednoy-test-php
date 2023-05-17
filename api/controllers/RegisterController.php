@@ -1,7 +1,7 @@
 <?php
   require_once '../config/bd.php';
   require_once '../models/User.php';
-  require_once '../handler/DatabaseHandler.php';
+  require_once '../handlers/DatabaseHandler.php';
 
   class RegisterController {
 
