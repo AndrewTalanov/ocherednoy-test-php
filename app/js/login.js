@@ -11,7 +11,8 @@ form.addEventListener('submit', (e) => {
   
   // const email = data.get('email');
   // const password = data.get('password');
-  
+  openLoader();
+
   fetch(API.LOGIN_CONTROLLER, {
     method: 'POST',
     body: data
@@ -19,6 +20,17 @@ form.addEventListener('submit', (e) => {
   .then(result => result.text())
   .then(token => {
     localStorage.setItem('token', token);
-    window.location.href = API.APP_PAGE;
+    closeLoader();
+    window.location.href = API.MAIN_PAGE;
   });
 });
+
+const openLoader = () => {
+  loader.classList.remove('d-none');
+  loader.classList.add('d-flex');
+}
+
+const closeLoader = () => {
+  loader.classList.remove('d-flex');
+  loader.classList.add('d-none');
+}

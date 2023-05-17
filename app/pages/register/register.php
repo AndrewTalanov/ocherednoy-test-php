@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Описание страницы регистрации">
   <meta name="keywords" content="регистрация, форма, веб-приложение">
-  <?php require_once '../includes/css-bootstrap.php' ?>
+  <?php require_once '../../includes/css-bootstrap.php' ?>
   <title>Регистрация</title>
 </head>
 <body>
@@ -34,17 +34,17 @@
           </div>
           <div class="js-warning"></div>
           <div id="loader" class="mt-3 mb-3 d-none justify-content-center d-none">
-            <img src="../img/loader.gif" alt="loader" width='80px' height='80px'>
+            <img src="../../img/loader.gif" alt="loader" width='80px' height='80px'>
           </div>
           <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
           <div class="mt-3">
-            <p>Уже зарегистрированы? <a href="./login.php">Авторизуйтесь</a>.</p>
+            <p>Уже зарегистрированы? <a href="../login/login.php">Авторизуйтесь</a>.</p>
           </div>
         </form>
       </div>
     </div>
   </div>
-  <script type="module" src="../js/register.js"></script>
-  <?php require_once '../includes/js-bootstrap.php' ?>  
+  <script type="module" src="../../js/register.js"></script>
+  <?php require_once '../../includes/js-bootstrap.php' ?>  
 </body>
 </html>

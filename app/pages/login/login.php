@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <?php require_once '../includes/css-bootstrap.php' ?>
+  <?php require_once '../../includes/css-bootstrap.php' ?>
   <title>Авторизация</title>
 </head>
 <body>
@@ -21,15 +21,18 @@
             <label for="password">Пароль</label>
             <input type="password" class="form-control" id="password" placeholder="Введите пароль" name="password">
           </div>
+          <div id="loader" class="mt-3 mb-3 d-none justify-content-center d-none">
+            <img src="../../img/loader.gif" alt="loader" width='80px' height='80px'>
+          </div>
           <button type="submit" class="btn btn-primary">Войти</button>
           <div class="mt-3">
-            <a href="./register.php">Нет аккаунта? Зарегистрируйтесь!</a>
+            <a href="../register/register.php">Нет аккаунта? Зарегистрируйтесь!</a>
           </div>
         </form>
       </div>
     </div>
   </div>
-  <script type="module" src="../js/login.js"></script>
-  <?php require_once '../includes/js-bootstrap.php' ?>  
+  <script type="module" src="../../js/login.js"></script>
+  <?php require_once '../../includes/js-bootstrap.php' ?>  
 </body>
 </html>
