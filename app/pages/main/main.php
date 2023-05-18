@@ -32,7 +32,7 @@ session_start();
         <button id="logout" class="btn btn-danger logout-btn">Выход</button>
       </div>
       <div id="content-wrapper" class="col-md main-section d-flex justify-content-center align-items-center">
-        
+        <!-- модули -->
       </div>
     </div>
   </div>
