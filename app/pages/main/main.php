@@ -28,6 +28,7 @@ session_start();
         <ul>
           <li id="link-main">Главная</li>
           <li id="link-profile">Профиль</li>
+          <li id="link-files">Файлы</li>
         </ul>
         <button id="logout" class="btn btn-danger logout-btn">Выход</button>
       </div>

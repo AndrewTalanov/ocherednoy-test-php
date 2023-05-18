@@ -7,6 +7,7 @@ export const API = {
   
   MODULE_MAIN: 'http://super-ultra-service/api/modules/main/main.module.php',
   MODULE_PROFILE: 'http://super-ultra-service/api/modules/profile/profile.module.php',
+  MODULE_FILES: 'http://super-ultra-service/api/modules/files/files.module.php',
 
   CHANGE_AVATAR: 'http://super-ultra-service/api/requests/changeAvatar.php',
 }

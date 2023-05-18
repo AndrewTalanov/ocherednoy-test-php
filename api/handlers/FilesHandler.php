@@ -1,70 +1,48 @@
-<?php 
-  require_once '../config/bd.php';
+<?php
+require_once '../config/bd.php' || '';
 
-  class FilesHandler {
+class FilesHandler
+{
 
-    private $file;
+  private $file;
 
-    public function __construct($file)
-    {
-      $this->file = $file;
-    }
+  public function __construct($file)
+  {
+    $this->file = $file;
+  }
 
-    public function addImg()
-    {
+  public function addImg()
+  {
 
-      // $uploadDir = '../uploads/img/';
-      // $folderName = $_SESSION['user']['id'];
+    $path = '../uploads/';
+    $folderName = $_SESSION['user']['id'];
 
-      // $folderPath = $uploadDir.$folderName;
-      // echo $folderPath;
+    $folderPath = $path . $folderName;
 
-      $path = '../uploads/img/';
-      $folderName = $_SESSION['user']['id'];
+    mkdir($folderPath, 0777, false);
 
-      $folderPath = $path.$folderName;
+    $fullPath = $folderPath . '/' . 'avatar.png';
 
-      mkdir($folderPath, 0777, false);
-      
-      $fullPath = $folderPath . '/' . 'avatar.png'; 
-
-      if($this->file['error'] == 0){
-        if(move_uploaded_file($this->file['tmp_name'], $fullPath)){
-          echo 'ok';
-        }
-    }
-      // if ($folderPath) {
-
-      //   if (file_exists($folderPath) && is_dir($folderPath)) {
-
-      //     // $fileName = 'avatar';
-      //     // $extension = pathinfo($fileName, PATHINFO_EXTENSION);
-  
-      //     // $newPath = $folderPath . '/' . $extension;
-      //     // echo $fileName;
-      //     // move_uploaded_file($fileName, $newPath);
-      //     // if (move_uploaded_file($fileName, $newPath)) {
-      //     //   return 'ok';
-      //     // } else {
-      //     //   return 'no';
-      //     // }
-
-      //   } else {
-      //     mkdir($folderPath, 0777, false);
-
-          // $fileName = 'avatar';
-          // $extension = pathinfo($fileName, PATHINFO_EXTENSION);
-  
-          // $newPath = $folderPath . '/' . $extension;
-          // move_uploaded_file($fileName, $newPath);
-          // if (move_uploaded_file($fileName, $newPath)) {
-          //   return 'ok';
-          // } else {
-          //   return 'no';
-          // }
-        // }
-      // } else {
-      //   return 'nooo';
-      // }
+    if ($this->file['error'] == 0) {
+      if (move_uploaded_file($this->file['tmp_name'], $fullPath)) {
+        echo 'ok';
+      }
     }
   }
+
+  public function addFile() 
+  {
+
+  }
+
+  public function getFiles()
+  {
+    $folder = 'http://super-ultra-service/api/uploads/'.$_SESSION['user']['id'].'/files';
+
+    $files = scandir($folder);
+
+    $files = array_diff($files, ['.', '..']);
+
+    return $files;
+  }
+}

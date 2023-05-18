@@ -6,6 +6,7 @@ const buttonLogout = document.getElementById('logout');
 const wrapper = document.getElementById('content-wrapper');
 const linkMain = document.getElementById('link-main');
 const linkProfile = document.getElementById('link-profile');
+const linkFiles = document.getElementById('link-files');
 
 // выход
 buttonLogout.addEventListener('click', () => {
@@ -18,8 +19,13 @@ linkMain.addEventListener('click', () => {
 });
 
 // в профиль
-linkProfile.addEventListener('click', (e) => {
+linkProfile.addEventListener('click', () => {
   location.hash = '#profile';
+});
+
+// в мои файлы
+linkFiles.addEventListener('click', () => {
+  location.hash = '#files';
 });
 
 // обработка изменения хэша браузера
@@ -61,6 +67,7 @@ const removeLinks = (hash) => {
 
   oldHash = hash;
 }
+
 // функция переключения модулей
 const moduleRequest = (hash) => {
 

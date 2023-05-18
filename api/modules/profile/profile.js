@@ -8,8 +8,6 @@ form.addEventListener('submit', (e) => {
 
   const data = new FormData(form);
 
-  // console.log(data.get('file'));
-
   fetch(API.CHANGE_AVATAR, {
     method: 'POST',
     body: data
@@ -18,9 +16,7 @@ form.addEventListener('submit', (e) => {
   .then(() => {
     fetch(API.CHANGE_AVATAR, {
       method: 'POST',
-      body: data
     })
-    .then(response => response.text())
-    .then(response => window.location.reload());
+    .then(() => window.location.reload());
   });
 });
