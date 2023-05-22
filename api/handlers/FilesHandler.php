@@ -1,5 +1,5 @@
 <?php
-require_once '../config/bd.php' || '';
+require_once '../config/bd.php';
 
 class FilesHandler
 {
@@ -35,14 +35,30 @@ class FilesHandler
 
   }
 
-  public function getFiles()
+  public function getAllFiles()
   {
-    $folder = 'http://super-ultra-service/api/uploads/'.$_SESSION['user']['id'].'/files';
+    $folder = '../uploads/'.$_SESSION['user']['id'].'/files';
 
     $files = scandir($folder);
 
     $files = array_diff($files, ['.', '..']);
 
-    return $files;
+    $fileSizes = [];
+
+    foreach ($files as $file) {
+      $filePath = $folder . '/' . $file;
+      $fileSize = filesize($filePath);
+      $fileSizes[$file] = $fileSize;
+    }
+
+    return $fileSizes;
+  }
+
+  public function downloadFile() {
+
+  }
+
+  public function deleteFile() {
+    
   }
 }

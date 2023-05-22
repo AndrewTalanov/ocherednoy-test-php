@@ -1,16 +1,16 @@
 <?php 
-  require_once '../handlers/FilesHandler.php';
-  
-  session_start();
+require_once '../handlers/FilesHandler.php';
 
-  $file = $_FILES['file'];
+session_start();
 
-  // $fileName = $file['name'];
-  // $fileType = $file['type'];
-  // $fileSize = $file['size'];
-  // $fileTmpPath = $file['tmp_name'];
-  // $fileError = $file['error'];
+$file = $_FILES['file'];
 
-  $filesHandler = new FilesHandler($file);
-  echo $filesHandler->addImg();
+// $fileName = $file['name'];
+// $fileType = $file['type'];
+// $fileSize = $file['size'];
+// $fileTmpPath = $file['tmp_name'];
+// $fileError = $file['error'];
+
+$filesHandler = new FilesHandler($file);
+echo $filesHandler->addImg();
 

@@ -1,18 +1,7 @@
-<?php
-require_once '../../handlers/FilesHandler.php';
-session_start();
-
-$filesHandler = new FilesHandler(null);
-return $filesHandler->getFiles();
-
-
-?>
 <div class="text-center mr-5">
   <button class="btn btn-primary">Добавить</button>
 </div>
 <table class="table">
-
-
   <thead>
     <tr>
       <th>Имя файла</th>
@@ -21,14 +10,7 @@ return $filesHandler->getFiles();
       <th></th>
     </tr>
   </thead>
-  <tbody>
-    
-    <?php foreach ($files as $file) : ?>
-
-      
-
-    <?php endforeach; ?>
-    <?php echo $files; ?>
+  <tbody id="list-files">
     <!-- <tr>
       <td>example.jpg</td>
       <td>Изображение</td>

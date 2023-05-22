@@ -10,4 +10,5 @@ export const API = {
   MODULE_FILES: 'http://super-ultra-service/api/modules/files/files.module.php',
 
   CHANGE_AVATAR: 'http://super-ultra-service/api/requests/changeAvatar.php',
+  GET_ALL_FILES: 'http://super-ultra-service/api/requests/getAllFiles.php',
 }
