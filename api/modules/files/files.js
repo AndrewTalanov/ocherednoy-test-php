@@ -1,10 +1,13 @@
 import { API } from "../../../API.js";
 
 fetch(API.GET_ALL_FILES, {})
-  .then(response => response.json())
-  .then(response => {
-    addFiles(response);
-  }); 
+.then(response => response.json())
+.then(response => {
+  addFiles(response);
+}); 
+
+let buttonDownload = '';
+let buttonDelete = '';
 
 function addFiles(array) {
   
@@ -22,13 +25,53 @@ function addFiles(array) {
         <td>${expansion}</td>
         <td>${size} MB</td>
         <td>
-          <a href="#" class="btn btn-primary">Скачать</a>
-          <a href="#" class="btn btn-danger">Удалить</a>
+          <button class="btn btn-primary" data-download="${name + expansion}">Скачать</button>
+          <button class="btn btn-danger" data-delete="${name + expansion}">Удалить</button>
         </td>
       </tr>
     `;
   });
-  console.log(assocArray)
 
   document.getElementById('list-files').innerHTML = arrayHtml;
+
+  addEvent();
 }
+
+function addEvent() {
+
+  buttonDownload = document.querySelectorAll('button[data-download]');
+  buttonDelete = document.querySelectorAll('button[data-delete]');
+
+  buttonDownload.forEach(el => {
+    el.addEventListener('click', (e) => {
+
+      const body = {'name': e.target.getAttribute('data-download')};
+
+      fetch(API.DOWNLOAD_FILE, {
+        method: 'POST',
+        body: body
+      });
+    });
+  });
+
+  buttonDelete.forEach(el => {
+    el.addEventListener('click', (e) => {
+
+      const body = {'name': e.target.getAttribute('data-delete')};
+
+      fetch(API.DELETE_FILE, {
+        method: 'POST',
+        body: body
+      })
+      .then((response) => {
+        response.text();
+      })
+      .then((response) => {
+        console.log(response);
+      });
+    });
+  });
+}
+
+
+

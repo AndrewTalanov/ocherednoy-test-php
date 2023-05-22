@@ -32,7 +32,7 @@ class FilesHandler
 
   public function addFile() 
   {
-
+    
   }
 
   public function getAllFiles()
